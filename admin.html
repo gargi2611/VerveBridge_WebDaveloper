@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Admin Dashboard</h1>
+    </header>
+    <main>
+        <section class="admin-actions">
+            <h2>Manage Courses and Students</h2>
+            <button onclick="showSection('addCourse')">Add Course</button>
+            <button onclick="showSection('manageCourse')">Manage Courses</button>
+            <button onclick="showSection('addStudent')">Add Student Details</button>
+            <button onclick="showSection('manageStudent')">Manage Student Details</button>
+            <button onclick="showSection('addExam')">Add Exam Question</button>
+            <button onclick="showSection('manageExam')">Manage Exam Questions</button>
+        </section>
+        <section id="addCourse" class="admin-section">
+            <h3>Add Course</h3>
+            <form id="addCourseForm" onsubmit="return addCourse()">
+                <label for="courseTitle">Course Title:</label>
+                <input type="text" id="courseTitle" name="courseTitle">
+                <label for="courseMaterials">Upload Materials:</label>
+                <input type="file" id="courseMaterials" name="courseMaterials" multiple>
+                <button type="submit">Add Course</button>
+            </form>
+        </section>
+        <section id="manageCourse" class="admin-section">
+            <h3>Manage Courses</h3>
+            <ul id="courseList"></ul>
+        </section>
+        <section id="addStudent" class="admin-section">
+            <h3>Add Student Details</h3>
+            <form id="addStudentForm" onsubmit="return addStudent()">
+                <label for="studentName">Name:</label>
+                <input type="text" id="studentName" name="studentName">
+                <label for="studentEmail">Email:</label>
+                <input type="email" id="studentEmail" name="studentEmail">
+                <label for="studentPhone">Phone:</label>
+                <input type="text" id="studentPhone" name="studentPhone">
+                <label for="studentClass">Class:</label>
+                <input type="text" id="studentClass" name="studentClass">
+                <button type="submit">Add Student</button>
+            </form>
+        </section>
+        <section id="manageStudent" class="admin-section">
+            <h3>Manage Student Details</h3>
+            <ul id="studentList"></ul>
+        </section>
+        <section id="addExam" class="admin-section">
+            <h3>Add Exam Question</h3>
+            <form id="addExamForm" onsubmit="return addExamQuestion()">
+                <label for="examQuestion">Question:</label>
+                <textarea id="examQuestion" name="examQuestion"></textarea>
+                <button type="submit">Add Question</button>
+            </form>
+        </section>
+        <section id="manageExam" class="admin-section">
+            <h3>Manage Exam Questions</h3>
+            <ul id="examQuestionList"></ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 BrainyBuddies. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
